@@ -1,0 +1,9 @@
+Backend operations performed:
+
+1. Receiving the values from the frontend.
+2. Establishing connection with MySQL
+3. Fetching the tweets from MySQL database
+4. Send the tweets displayed in ReactJS
+
+Packages needed- express, twitter, MySQL, body- parser, request , http.
+The code is avaiable at TestAPI.js
