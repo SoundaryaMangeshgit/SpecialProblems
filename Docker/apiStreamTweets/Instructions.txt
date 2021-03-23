@@ -1,0 +1,35 @@
+In this I am running , node.js application with Mysql database using docker and microservice architecture. 
+
+Things Done:
+
+1. Launch mysql server in a docker container. 
+2. Launch node application in a separate container. 
+3. Tested the integrated mysql-nodejs app.
+
+
+Step1: Create a dockerfile inside mysql folder .
+
+Step2: Build the image by running this dockerfile, docker build -t test-mysql
+
+Step3: Check the built image, using docker images
+
+Step4: Run Docker image as container
+
+docker run -d
+
+Step5: Check Docker state docker ps , now mysql container is launched.
+
+
+Launching node js app in a container:
+
+Step1: Create a dockerfile 
+
+Step2: Build the image by running this dockerfile, docker build -t test-nodejs
+
+Step3: Check the built image, using docker images
+
+Step4: Run Docker image as container
+
+docker run -d --publish -e --link test-mysql-microservice:db --name
+
+
