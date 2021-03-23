@@ -1,0 +1,17 @@
+version: '3'
+services:
+    node-app:
+        build: .
+        environment:
+            - DATABASE_HOST=db
+        depends_on:
+            - db
+        restart: always
+        ports:
+            - 9000:9000
+    db:
+        build: ./mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: test1
