@@ -1,0 +1,825 @@
+/* Reusable Styles
+======================== */
+$primary-black: #1a1a1a;
+$primary-green: #2bb656;
+$primary-blue: #1d67a7;
+$twitter-blue: #59BBFF;
+
+$background-dark-gray: #1a252f;
+$background-header-gray: #b3b3b3;
+$background-chart-gray: #f7f7f7;
+$background-light-gray: #d5d5d5;
+
+$text-black: #4d4d4d;
+$text-dark-gray: #666;
+$text-gray: #999;
+$CTA-green: #59cb59;
+$CTA-hover-green: #218d43;
+
+$total: blue;
+$positive: green;
+$neutral: sandybrown;
+$negative: red;
+
+$font-family: 'Open Sans', sans-serif;
+
+html,
+body {
+  position: relative;
+  font-family: $font-family;
+  color: $text-gray;
+  background-color: #F5F7F9;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+.intro-text {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+  color: $text-black;
+
+  h2 {
+    font-size: 35px;
+    font-weight: 700;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 16px;
+  }
+}
+
+
+/* Header and Nav Styles
+======================== */
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+
+  nav {
+    height: 60px;
+    background-color: $primary-black;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0, 0.3);
+
+    ul {
+      width: 80% !important;
+      margin-right: auto;
+      margin-left: auto;
+      list-style: none;
+      padding: 0;
+      width: 100%;
+
+      li {
+        display: inline-block;
+        padding-top: 22px;
+        margin-right: 40px;
+
+        a {
+          padding: 10px 0;
+          text-decoration: none !important;
+          text-transform: uppercase;
+          font-size: 15px;
+          color: $text-gray;
+          transition: all 0.25s ease-in-out;
+
+          &:hover,
+          &:active,
+          &:focus {
+            color: $primary-green;
+            outline: none;
+          }
+
+          &:after {
+            content: "";
+            padding-bottom: 7px;
+            display: block;
+            border-bottom: 2px solid $primary-green;
+            width: 0;
+            transition: all 0.25s ease-in-out;
+            pointer-events: none;
+          }
+
+          &:hover:after {
+            width: 100%;
+          }
+        }
+      }
+
+      #nav-logo {
+        height: 25px;
+        width: auto;
+        margin-right: 5px;
+        margin-bottom: 2px;
+      }
+
+      #home-nav {
+        a {
+          color: $twitter-blue;
+          font-weight: 600;
+          font-size: 17px;
+        }
+      }
+    }
+  }
+}
+
+/* Hero and Search Bar Styles
+======================== */
+.hero {
+  height: 700px;
+  background-image: linear-gradient(rgba(0,0,0, 0.4), rgba(0,0,0, 0.8)),  url(../img/hero.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  position: relative;
+
+  .content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 800px;
+
+    h1,
+    h2 {
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      order: 3;
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      color: #cfcfcf;
+    }
+
+    h2 {
+      order: 2;
+      font-size: 40px;
+      font-weight: 700;
+
+      @media(max-width: 640px) {
+        font-size: 30px;
+      }
+    }
+
+    .text-logo {
+
+      img {
+        height: 60px;
+        width: auto;
+        margin-right: 10px;
+        margin-bottom: 15px;
+      }
+
+      order: 1;
+      font-weight: 600;
+      font-size: 40px;
+      color: $twitter-blue;
+    }
+
+
+    #search-bar {
+      order: 4;
+      width: 350px;
+      margin-top: 40px;
+      margin-right: auto;
+      margin-left: auto;
+      
+      input:focus {
+        border: 1px solid $CTA-hover-green;
+        box-shadow: 0 0 4px $CTA-hover-green;
+      }
+      
+      .btn-default {
+        background-color: $primary-green;
+        border-color: $primary-green;
+        font-family: $font-family;
+        font-weight: 300;
+        color: white;
+        text-transform: uppercase;
+        transition: all 0.25s ease-in-out;
+
+        &:hover {
+          background-color: $CTA-hover-green;
+          border-color: $CTA-hover-green;
+        }
+      }
+    }
+  }
+}
+
+/* Technology Stack Section Styles
+======================== */
+.technology-stack {
+  padding-bottom: 20px;
+  background-color: $background-dark-gray;
+  background-image: url('/img/tech-background.png');
+  background-size: 80%;
+  font-weight: 300;
+  font-size: 19px;
+  text-align: center;
+
+  .technologies-container {
+    padding-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+
+    .heading {
+      color: $text-gray;
+      margin-bottom: 30px;
+    }
+
+    .nodejs {
+      .nodejs-logo {
+        height: 120px;
+        width: 200px;
+        margin-right: auto;
+        margin-left: auto;
+        background-image: url("../img/logo/nodejs-gray.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background-image: url("../img/logo/nodejs.png");
+        }
+      }
+    }
+
+    .socketio {
+      .socketio-logo {
+        height: 120px;
+        width: 200px;
+        margin-right: auto;
+        margin-left: auto;
+        background-image: url("../img/logo/socketio-gray.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background-image: url("../img/logo/socketio.png");
+        }
+      }
+    }
+
+    .react {
+      .react-logo {
+        height: 120px;
+        width: 200px;
+        margin-right: auto;
+        margin-left: auto;
+        background-image: url("../img/logo/react-gray.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background-image: url("../img/logo/react.png");
+        }
+      }
+    }
+
+    .d3 {
+      padding-bottom: 10px;
+      .d3-logo {
+        height: 80px;
+        width: 80px;
+        margin-right: auto;
+        margin-left: auto;
+        background-image: url("../img/logo/d3-gray.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background-image: url("../img/logo/d3.png");
+        }
+      }
+    }
+
+    .twitter {
+      .twitter-logo {
+        height: 120px;
+        width: 250px;
+        margin-right: auto;
+        margin-left: auto;
+        background-image: url("../img/logo/twitter-gray.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background-image: url("../img/logo/twitter.png");
+        }
+      }
+    }
+
+    .heroku {
+      .heroku-logo {
+        height: 120px;
+        width: 250px;
+        margin-right: auto;
+        margin-left: auto;
+        background-image: url("../img/logo/heroku-gray.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background-image: url("../img/logo/heroku.png");
+        }
+      }
+    }
+
+  }
+}
+
+/* About Section Styles
+======================== */
+#about {
+  padding-top: 30px;
+
+  .title {
+    text-align: center;
+
+    h3 {
+      font-weight: 600;
+      font-size: 32px;
+      color: $primary-green;
+    }
+    p {
+      color: $text-dark-gray;
+    }
+  }
+
+  .features {
+    margin-top: 20px;
+    padding-bottom: 50px;
+
+    .tile {
+      min-height: 320px;
+      padding: 0 10px 20px;
+      border-radius: 10px;
+      border: 1px solid $background-light-gray;
+      box-shadow: 0 4px 8px rgba(166, 166, 166, 0.3);
+      background-color: white;
+
+      @media(max-width: 992px) {
+        min-height: 200px;
+        margin-top: 5px;
+      }
+
+      h3 {
+        color: $text-black;
+        text-align: center;
+        margin-bottom: 30px;
+
+        .circle {
+          width: 75px;
+          height: 75px;
+          margin: 0 auto 30px auto;
+          display: block;
+          border: 3px solid rgba(0, 0, 0, 0.13);
+          border-radius: 50%;
+
+          .fa {
+            color: $primary-green;
+            margin-top: 15px;
+            font-size: 40px;
+          }
+        }
+      }
+
+      p {
+        color: $text-dark-gray;
+        text-align: center;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+
+/* Results Section Styles
+======================== */
+.results {
+  height: 700px;
+
+  .dashboard {
+    height: 700px;
+    overflow-y: hidden;
+    background-color: $background-dark-gray;
+
+    h1 {
+      color: $text-black;
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    /* Activity Chart Styles
+    ======================== */
+    .twitter-activity {
+      width: 800px;
+      margin-right: auto;
+      margin-left: auto;
+      display: block;
+
+      h4 {
+        margin-top: 20px;
+        margin-bottom: 0;
+        padding: 15px 5px 10px;
+        color: $text-black;
+        border-radius: 5px 5px 0 0;
+        font-size: 20px;
+        text-align: center;
+        background-color: $background-header-gray;
+      }
+
+      .line-chart {
+        background-color: $background-chart-gray;
+        display: block;
+        margin: auto;
+        box-shadow: 0 0 1px 1px rgba(0,0,0, 0.2);
+
+        .gridline path,
+        .gridline line {
+          fill: none;
+          stroke: #ccc;
+          shape-rendering: crispEdges;
+        }
+
+        .axis path,
+        .axis line {
+          fill: none;
+          stroke: $background-dark-gray;
+          shape-rendering: crispEdges;
+        }
+
+        .axis text {
+          font-family: $font-family;
+          font-size: 14px;
+        }
+
+        .axis text.x-label,
+        .axis text.y-label {
+          font-family: $font-family;
+          fill: $text-gray;
+        }
+      }
+
+      .tweet-counters {
+        display: flex;
+        border-top: 1px solid $background-dark-gray;
+
+        .total {
+          width: 100%;
+          position: relative;
+          
+          h3 {
+            margin: 0;
+            padding: 10px 0;
+            color: $text-black;
+            font-size: 14px;
+            text-align: center;
+            background-color: $background-light-gray;
+          }
+
+          .total-tweets {
+            height: 5px;
+            background-color: $total;
+          }
+
+          .total-positive {
+            height: 5px;
+            background-color: $positive;
+          }
+
+          .total-neutral {
+            height: 5px;
+            background-color: $neutral;
+          }
+
+          .total-negative {
+            height: 5px;
+            background-color: $negative;
+          }
+
+          .counter {
+            padding: 5px 0;
+            color: #737373;
+            font-size: 28px;
+            font-weight: 600;
+            text-align: center;
+            background-color: white;
+            transition: all 0.2s ease-in-out;
+
+            &.positive {
+              color: $positive;
+            }
+
+            
+            &.neutral {
+              color: $neutral;
+            }
+
+            &.negative {
+              color: $negative;
+            }
+          }
+
+          .total-tweets + .counter {
+            border-radius: 0 0 0 5px;
+          }
+
+          .total-negative + .counter {
+            border-radius: 0 0 5px 0;
+          }
+
+          .arrow {
+            position: absolute;
+            bottom: 20px;
+            right: 15px;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            transition: all 0.2s ease-in-out;
+
+            &.positive {
+              border-bottom: 10px solid $positive;
+            }
+
+            &.neutral,
+            &.null {
+              border-bottom: 10px solid $neutral;
+            }
+
+            &.negative {
+              border-bottom: 10px solid $negative;
+            }
+          }
+        }
+      }
+
+      .overall-sentiment {
+        margin-top: 30px;
+        display: inline-block;
+        background-color: $background-chart-gray;
+        border-radius: 5px 5px 5px 5px;
+
+        h3 {
+          display: inline-block;
+          padding: 10px 0 10px 10px;
+          margin: 0;
+          width: 220px;
+          color: $text-black;
+          font-size: 24px;
+          border-right: 1px solid $background-dark-gray;
+          border-radius: 5px 0 0 5px;
+          background-color: $background-light-gray;
+        }
+
+        p {
+          display: inline-block;
+          margin-bottom: 0;
+          padding: 0 10px;
+          font-size: 24px;
+          color: $text-dark-gray;
+
+          &.positive {
+            color: $positive;
+          }
+
+          &.negative {
+            color: $negative;
+          }
+        }
+      }
+    }
+  }
+  
+  /* Twitter Stream Styles
+  ======================== */
+  .stream {
+    height: 700px;
+    background-color: $background-dark-gray;
+    padding: 0 25px 0 15px;
+
+    h1 {
+      margin-bottom: 0;
+      padding: 15px 5px 10px;
+      color: $text-black;
+      border-radius: 5px 5px 0 0;
+      font-size: 20px;
+      text-align: center;
+      background-color: $background-header-gray;
+    }
+
+    .tweet-list {
+      height: 600px;
+      background-color: $background-chart-gray;
+      padding-bottom: 20px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      box-shadow: 0 0 1px 1px rgba(0,0,0, 0.2);
+
+      .tweet-card {
+        padding: 10px 0px 10px 15px;
+        margin: 5px 10px 5px 10px;
+        border-bottom: 1px solid #ccc;
+        background-color: white;
+        box-shadow: 0 0 1px 1px rgba(0,0,0, 0.2);
+
+        .profile-image {
+          display: inline-block;
+          vertical-align: top;
+          margin-right: 10px;
+          height: 50px;
+          width: 50px;
+          border-radius: 5px;
+        }
+
+        .content {
+          display: inline-block;
+          width: 80%;
+          position: relative;
+
+          .user {
+            display: inline-block;
+            width: 90%;
+
+            .name {
+              font-size: 14px;
+              color: $text-black;
+              font-weight: 700;
+              margin-right: 10px;
+            }
+
+            .username {
+              font-size: 14px;
+            }
+          }
+
+          .sentiment {
+            position: absolute;
+            top: 5px;
+            right: 0;
+            display: inline-block;            
+
+            &.positive {
+              width: 0;
+              height: 0;
+              border-left: 10px solid transparent;
+              border-right: 10px solid transparent;
+              border-bottom: 10px solid $positive;
+            }
+
+            &.neutral,
+            &.null {
+              height: 10px;
+              width: 10px;
+              margin-right: 5px;
+              border-radius: 50%;
+              background-color: $neutral;
+
+            }
+
+            &.negative {
+              width: 0;
+              height: 0;
+              border-left: 10px solid transparent;
+              border-right: 10px solid transparent;
+              border-top: 10px solid $negative;
+            }
+          }
+
+          .text {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  } 
+}
+
+/* Footer Styles
+======================== */
+
+footer {
+  height: 80px;
+  background-color: $primary-black;
+
+  .baseline-container {
+    position: relative;
+
+    .connect-container {
+      position: absolute;
+      right: 40px;
+      bottom: 0;
+      margin-right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+
+      p {
+        margin-top: 10px;
+        margin-right: 20px;
+        font-size: 14px;
+        font-weight: 300;
+        color: $text-gray;
+      }
+
+      .github-logo {
+        height: 30px;
+        width: 30px;
+        margin-right: 10px;
+        background-image: url("../img/logo/github-gray.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background-image: url("../img/logo/github.png");
+        }
+      }
+
+      .linkedin-logo {
+        height: 25px;
+        width: 25px;
+        margin-top: 5px;
+        margin-left: 10px;
+        background-image: url("../img/logo/linkedin-gray.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background-image: url("../img/logo/linkedin.png");
+        }
+      }
+
+      @media(max-width: 930px) {
+        position: relative;
+        right: 0;
+        margin-right: 0;
+      }
+    }
+
+    .branding-container {
+      margin-top: 30px;
+
+      p {
+        color: $text-black;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
